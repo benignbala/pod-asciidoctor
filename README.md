@@ -1,18 +1,8 @@
-Pod-AsciiDoctor
+# Pod-AsciiDoctor
 
-The README is used to introduce the module and provide instructions on
-how to install the module, any machine dependencies it may have (for
-example C compilers and installed libraries) and any other information
-that should be provided before the module is installed.
+Pod::AsciiDoctor is a converter to convert Pod documents to AsciiDoc syntax.
 
-A README file is required for CPAN modules since CPAN extracts the README
-file from a module distribution so that people browsing the archive
-can use it to get an idea of the module's uses. It is usually a good idea
-to provide version information here so that people can decide whether
-fixes for the module are worth downloading.
-
-
-INSTALLATION
+## INSTALLATION
 
 To install this module, run the following commands:
 
@@ -28,7 +18,7 @@ Alternatively, to install with Module::Install, you can use the following comman
 	make test
 	make install
 
-SUPPORT AND DOCUMENTATION
+## SUPPORT AND DOCUMENTATION
 
 After installing, you can find documentation for this module with the
 perldoc command.
@@ -50,9 +40,7 @@ You can also look for information at:
         http://search.cpan.org/dist/Pod-AsciiDoctor/
 
 
-LICENSE AND COPYRIGHT
-
-Copyright (C) 2015 Balachandran Sivakumar
+## LICENSE AND COPYRIGHT
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
