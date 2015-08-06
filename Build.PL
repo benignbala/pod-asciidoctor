@@ -5,7 +5,7 @@ use Module::Build;
 
 my $builder = Module::Build->new(
     module_name         => 'Pod::AsciiDoctor',
-    license             => 'Artistic_2_0',
+    license             => 'Apache_2_0',
     dist_author         => q{Balachandran Sivakumar <balachandran@balachandran.org>},
     dist_version_from   => 'lib/Pod/AsciiDoctor.pm',
     release_status      => 'stable',
