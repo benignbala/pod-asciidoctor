@@ -4,6 +4,7 @@ use 5.006;
 use strict;
 use warnings FATAL => 'all';
 use base 'Pod::Parser';
+
 =head1 NAME
 
 Pod::AsciiDoctor - Convert from POD to AsciiDoc
@@ -33,7 +34,7 @@ Converts the POD of a Perl module to AsciiDoc format.
 
 =cut
 
-sub initalize {
+sub initialize {
     my $self = shift;
     $self->SUPER::initialize(@_);
     $self->_prop;
