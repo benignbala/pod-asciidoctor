@@ -15,7 +15,7 @@ Version 0.01
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.03';
 
 
 =head1 SYNOPSIS
@@ -198,6 +198,7 @@ sub set_formatting {
 =head1 AUTHOR
 
 Balachandran Sivakumar, C<< <balachandran at balachandran.org> >>
+Abhisek Kumar Rout, C<< <akr.optimus at gmail.com> >>
 
 =head1 BUGS
 
@@ -243,7 +244,7 @@ L<http://search.cpan.org/dist/Pod-AsciiDoctor/>
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright 2015 Balachandran Sivakumar.
+Copyright 2015 Balachandran Sivakumar, Abhisek Kumar Rout.
 
 This program is free software; you can redistribute it and/or modify it
 under the terms of the the Apache License (2.0). You can get a copy of 

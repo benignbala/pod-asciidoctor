@@ -21,6 +21,11 @@ my $builder = Module::Build->new(
     },
     add_to_cleanup     => [ 'Pod-AsciiDoctor-*' ],
     create_makefile_pl => 'traditional',
+    meta_merge => {
+        x_contributors => [
+            'Abhisek Kumar Rout < akr.optimus@gmail.com >'
+            ],
+    }
 );
 
 $builder->create_build_script();
