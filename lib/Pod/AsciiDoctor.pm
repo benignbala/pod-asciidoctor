@@ -147,7 +147,23 @@ sub textblock {
     my $self = shift;
     my ($paragraph, $lineno) = @_;
     chomp($paragraph);
+    $paragraph = $self->interpolate($paragraph);
     $self->append($paragraph);
+}
+
+=head2 interior_sequence
+
+    Overrides Pod::Parser::interior_sequence (Copied from the Pod::Parser)
+
+=cut
+
+sub interior_sequence { 
+    my ($parser, $seq_command, $seq_argument) = @_;
+    ## Expand an interior sequence; sample actions might be:
+    print "Called\n";
+    return "*$seq_argument*"     if ($seq_command eq 'B');
+    return "`$seq_argument`"     if ($seq_command eq 'C');
+    return "_${seq_argument}_'"  if ($seq_command eq 'I');
 }
 
 =head2 make_header
