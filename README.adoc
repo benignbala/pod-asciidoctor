@@ -1,6 +1,7 @@
 = Pod-AsciiDoctor
 
 Pod::AsciiDoctor is a converter to convert Pod documents to AsciiDoc syntax.
+image:https://travis-ci.org/benignbala/pod-asciidoctor.svg?branch=master["Build Status", link="https://travis-ci.org/benignbala/pod-asciidoctor"]
 
 == INSTALLATION
 
