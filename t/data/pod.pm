@@ -1,12 +1,12 @@
 =pod
 
-This is a test to see if I can do not only C<$self> and C<method()>, but
+This is a B<test> to see if I can do not only C<$self> and C<method()>, but
 also C<< $self->method() >> and C<< $self->{FIELDNAME} >> and
 C<< $Foo <=> $Bar >> without resorting to escape sequences. If 
 I want to refer to the right-shift operator I can do something
 like C<<< $x >> 3 >>> or even C<<<< $y >> 5 >>>>.
 
-Now for the grand finale of C<< $self->method()->{FIELDNAME} = {FOO=>BAR} >>.
+Now for the I<grand> finale of C<< $self->method()->{FIELDNAME} = {FOO=>BAR} >>.
 And I also want to make sure that newlines work like this
 C<<<
 $self->{FOOBAR} >> 3 and [$b => $a]->[$a <=> $b]
@@ -26,5 +26,8 @@ the first < seen.
 
 Lets make sure these work for empty ones too, like C<<  >> and C<< >> >>
 (just to be obnoxious)
+
+L<Asciidoctor User Manual|http://asciidoctor.org/docs/asciidoc-syntax-quick-reference>
+L<Pod::Asciidoctor>
 
 =cut

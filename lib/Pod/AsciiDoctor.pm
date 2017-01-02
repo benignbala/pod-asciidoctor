@@ -107,7 +107,6 @@ sub command {
         $data->{command} = 'head';
         $data->{topheaders}{$1} = defined($data->{topheaders}{$1}) ? $data->{topheaders}{$1}++ : 1;
         $paragraph = $self->set_formatting($paragraph);
-        # print "PARA:: $paragraph\n";
         $self->append($self->make_header($command, $level, $paragraph));
     }
 
@@ -160,10 +159,35 @@ sub textblock {
 sub interior_sequence { 
     my ($parser, $seq_command, $seq_argument) = @_;
     ## Expand an interior sequence; sample actions might be:
-    print "Called\n";
     return "*$seq_argument*"     if ($seq_command eq 'B');
     return "`$seq_argument`"     if ($seq_command eq 'C');
-    return "_${seq_argument}_'"  if ($seq_command eq 'I');
+    return "_${seq_argument}_'"  if ($seq_command eq 'I' || $seq_command eq 'F');
+    if ($seq_command eq 'L') {
+        my $ret = "";
+        my $text;
+        my $link;
+        if ($seq_argument =~ /(.+)\|(.+)/) {
+            $text = $1;
+            $link = $2;
+        } elsif ($seq_argument =~ /(.+)/) {
+            $text = "";
+            $link = $1;
+        }
+        if ($link =~ /(.+?\:\/\/)(.+)/) {
+            $ret .= "$link";
+            $ret .= " [$text]" if (length($text));
+        } elsif (length($link)) {
+            # Internal link
+            if ($link =~ /(.+)\/(.+)/) {
+                $ret = "<< $1#$2 >>";
+                $ret = "<< $1#$2,$text >>" if ($text);
+            } else {
+                $ret = "<< $link >>";
+                $ret = "<< $link,$text >>" if ($text);
+            }
+        }
+        return $ret;
+    }
 }
 
 =head2 make_header
@@ -191,7 +215,6 @@ sub make_text {
     my @i_paragraph;
     my $pnt = $list ? "*" : "";
     for my $line (@lines) {
-        # print "MKTXT::$line\n";
         push @i_paragraph, $pnt x $data->{indent} . " " . $line . "\n";
     }
     return join "\n", @i_paragraph;
